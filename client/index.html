@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css">
+    <title>GIT SEARCH HISTORY</title>
+    <style>
+
+    body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+        font-weight: lighter;
+    }
+    </style>
+</head>
+    
+<body>
+    <div class="row">
+        <div class="col-sm-6 col-form-label text-sm-right">
+            <h1> GITHUB REPOS </h1>
+            <div class="row">
+                <div class="col-sm-5"></div>
+                <div class="col-sm-7">
+                <input type="text" id="wall-search" class="form-control text-sm-right" placeholder="Type a Github user" autocomplete="off" autofocus/>
+                <p> </p>
+                <button id="search-button" class="btn btn-primary" type="button">Search</button>
+                <p> </p>
+                
+                <div id="result"></div>
+                </div>
+            </div><!-- inner row end-->
+        </div>
+
+        <div class="col-sm-6 col-form-label text-sm-left">
+            <h1> SEARCH HISTORY </h1>
+            <p> </p>
+            <div id="wall-searches"></div>
+        </div>
+    </div><!-- .row end-->
+
+    <template id="search-template">
+      <div class="wall-search">
+        <p>{{createdAt}}</p>
+        <p>{{term}}</p>
+      </div>
+    </template><!-- .template end-->
+
+    <template id="searches-template">
+      {{#each searches}}
+        <div class="wall-search">
+          <p>{{createdAt}}</p>
+          <p>{{term}}</p>
+        </div>
+      {{/each}}
+    </template><!-- .template end-->
+
+<!-- script tags -->
+<script src="./src/jquery-3.2.1.js"></script>
+<script src="./src/handlebars-v4.0.10.js"></script>
+<script src="./src/main.js"></script>
+
+</body>
+</html>
